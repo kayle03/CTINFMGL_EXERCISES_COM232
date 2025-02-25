@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21.0.6"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="HomeController">
+
+    <VBox prefHeight="400.0" prefWidth="640.0">
+        <children>
+            <MenuBar VBox.vgrow="NEVER">
+                <menus>
+                    <Menu text="File">
+                        <items>
+                            <MenuItem text="New"/>
+                            <MenuItem text="Open…"/>
+                            <MenuItem text="Save"/>
+                            <MenuItem text="Save As…"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Quit"/>
+                        </items>
+                    </Menu>
+                    <Menu text="Edit">
+                        <items>
+                            <MenuItem text="Undo"/>
+                            <MenuItem text="Redo"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Cut"/>
+                            <MenuItem text="Copy"/>
+                            <MenuItem text="Paste"/>
+                            <MenuItem text="Delete"/>
+                        </items>
+                    </Menu>
+                    <Menu text="Help">
+                        <items>
+                            <MenuItem text="About"/>
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+
+            <AnchorPane VBox.vgrow="ALWAYS">
+                <children>
+                    <Label fx:id="homelabel2" layoutX="300.0" layoutY="20.0" text="Welcome">
+                        <font>
+                            <Font size="26.0"/>
+                        </font>
+                    </Label>
+
+                    <TableView fx:id="userTable" layoutX="120" layoutY="80" prefHeight="200" prefWidth="500">
+                        <columns>
+                            <TableColumn fx:id="colUsername" prefWidth="250" text="Username"/>
+                            <TableColumn fx:id="colPassword" prefWidth="250" text="Password"/>
+                        </columns>
+                    </TableView>
+
+                    <Label layoutX="120" layoutY="300" text="Username:"/>
+                    <TextField fx:id="usernameField" layoutX="200" layoutY="300"/>
+
+                    <Label layoutX="120" layoutY="340" text="Password:"/>
+                    <TextField fx:id="passwordField" layoutX="200" layoutY="340"/>
+
+                    <Button layoutX="420" layoutY="300" onAction="#createUser" text="Create"/>
+                    <Button layoutX="420" layoutY="330" onAction="#updateUser" text="Update"/>
+                    <Button layoutX="420" layoutY="360" onAction="#deleteUser" text="Delete"/>
+
+                    <Label layoutX="120" layoutY="400" text="New Password:"/>
+                    <TextField fx:id="changepasstextfield" layoutX="260" layoutY="400"/>
+                    <Button layoutX="470" layoutY="400" onAction="#changepasshandler" text="Change Password"/>
+                </children>
+            </AnchorPane>
+        </children>
+    </VBox>
+</AnchorPane>
